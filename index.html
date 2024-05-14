@@ -7,8 +7,14 @@
 </head>
 <body>
     <h1>Select a Football Team</h1>
-    <select id="dropdown"></select>
-    <button id="submitButton">Show Team Information</button>
+    <form id="footballForm">
+    
+        <label for="teamName">Teamname:</label>
+        <input type="text" name="teamName" id="teamname">
+        <select id="dropdown"> </select>
+        <button type="submit" id="submitButton">Show Team Information</button>
+
+    </form>
     <p id="teamInfo"></p>
 
     <script src="app.js"></script>
