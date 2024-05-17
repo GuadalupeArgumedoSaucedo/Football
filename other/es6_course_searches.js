@@ -37,22 +37,21 @@ let courses = [
 ]; 
 
  //  When does the PROG200 course start? 
-
  const PROG200CourseStart = courses.find(courses => courses.CourseId === "PROG200");
  console.log(PROG200CourseStart.StartDate);
 
 //  What is the title of the PROJ500 course? 
 const PROJ500CourseStart = courses.find(courses => courses.CourseId === "PROJ500");
 console.log(PROJ500CourseStart.Title);
+
 //  What are the titles of the courses that cost $50 or less? 
-for (let i = 0; i < courses.length; i++) {
-    if (courses[i].Fee <= parseInt("50.00")) {
-        console.log(courses[i].Title + " - $" + courses[i].Fee);
-    }
-}
+let cheapCourses = courses.filter(courses => courses.Fee <= parseInt("50.00"));
+cheapCourses.forEach(courses => {
+    console.log(courses.Title + " - $" + courses.Fee);
+})
+
 //  What  classes meet in "Classroom 1"? 
-for (let i = 0; i < courses.length; i++) {
-    if (courses[i].Location === "Classroom 1") {
-        console.log(courses[i].CourseId + " - " + courses[i].Title + " - " + courses[i].Location);
-    }
-}
+let class1 = courses.filter(course => course.Location === ("Classroom 1"));
+class1.forEach(courses => {
+    console.log(courses.CourseId + " - " + courses.Title);
+})

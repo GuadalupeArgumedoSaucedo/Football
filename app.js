@@ -12,13 +12,12 @@ let teams = [
 function initialize() {
     const selectElement = document.getElementById('dropdown'); // Find the dropdown elemen
 
-    selectElement.innerHTML = ""
+    selectElement.innerHTML = "";
     teams.forEach(function (team) { // Loop through the teams
         let option = new Option(team.name, team.code); // Create an option for each team
         selectElement.appendChild(option); // Add the option to the dropdown
     });
 }
-
 
 // Function to display the selected team info
 function showTeamInfo(event) {
@@ -29,8 +28,7 @@ function showTeamInfo(event) {
     if (selectedTeam) { // If a team is selected
         let teamInfoElement = document.getElementById('teamInfo'); // Show the team's name and location
         teamInfoElement.textContent = ` You selected the ${selectedTeam.name} (${selectedTeam.code}) who play in ${selectedTeam.plays}`;
-    } 
-    else {
+    } else {
         alert('Please select a team.'); // If no team is selected, alert the user
     }
 }
@@ -42,7 +40,8 @@ window.onload = function () {
 };
 
 function initEventHandlers() {
-  //  document.getElementById('submitButton').addEventListener('click', showTeamInfo()); // Add an event listener to the button
-  document.getElementById("footballForm").addEventListener("submit", function(event) {
-    showTeamInfo(event);
-})};
+    // document.getElementById('submitButton').addEventListener('click', showTeamInfo); // Add an event listener to the button
+    document.getElementById("footballForm").addEventListener("submit", function(event) {
+        showTeamInfo(event);
+    });
+}

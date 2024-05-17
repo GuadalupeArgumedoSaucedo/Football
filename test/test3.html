@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">Click me</button>
+    <button class="myButton">Click Me</button>
+    <button class="myButton">Click Me</button>
+
+
+    <script>
+        document.getElementById('myButton').addEventListener('click', runThisCode)
+        document.getElementById('myButton').addEventListener('mouseover', runSecondCode)
+
+    function runThisCode() {    
+        alert('hi')
+    }   
+    function runSecondCode() {    
+        alert('This is the second event')
+    }   
+
+    displayCourses(courses);
+            const allbuttons =  document.querySelectorAll('.myButton');
+            console.log(allbuttons);
+            allbuttons.forEach(button => 
+                button.addEventListener('mouseover', runSecondCode)
+            )
+    </script>
+</body>
+</html>
